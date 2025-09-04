@@ -205,9 +205,10 @@
      View Resume
   </a>
   <a href="./resume/devesh_resume.pdf" download="devesh_resume.pdf"
-     class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
-     Download Resume
-  </a>
+   onclick="resumeDownloaded()"
+   class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+   Download Resume
+</a>
 </div>
 
 
@@ -913,4 +914,16 @@
         track.style.transform = `translateX(-${currentIndex * 100}%)`;
     }, 3000); // change every 4s
     </script>
+
+    <script>
+  function resumeDownloaded() {
+    // Show toast before file viewer takes over
+    const msg = document.createElement("div");
+    msg.innerText = "Resume is downloading…";
+    msg.className = "fixed bottom-4 right-4 bg-green-600 text-white px-4 py-2 rounded-lg shadow-lg";
+    document.body.appendChild(msg);
+
+    setTimeout(() => msg.remove(), 3000);
+  }
+</script>
 </html>
