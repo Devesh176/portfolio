@@ -1,72 +1,886 @@
+<!-- <!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Devesh — Portfolio</title>
+  <meta name="description" content="Welcome to the portfolio of Devesh, a Data Scientist, ML Engineer, and Robotics Developer." />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body class="home-page">
+  <div class="spotlight"></div>
+
+  <div class="container home-container">
+    <header class="home-header">
+      <h1 class="intro-name">Devesh P</h1>
+      <h2 class="intro-title">ML Engineer & Robotics Developer</h2>
+      <p class="intro-bio">I build intelligent, data-driven systems that bridge the gap between digital models and physical reality.</p>
+    </header>
+
+    <nav class="home-nav">
+      <a href="about.html" class="nav-card">
+        <h3>About Me</h3>
+        <p>My background, skills, and professional resume.</p>
+      </a>
+      <a href="projects.html" class="nav-card">
+        <h3>Projects</h3>
+        <p>A showcase of my selected work and case studies.</p>
+      </a>
+      <a href="experience.html" class="nav-card">
+        <h3>Experience</h3>
+        <p>A timeline of my professional journey and roles.</p>
+      </a>
+      <a href="education.html" class="nav-card">
+        <h3>Education</h3>
+        <p>Details of my academic qualifications.</p>
+      </a>
+      <a href="contact.html" class="nav-card">
+        <h3>Contact</h3>
+        <p>Get in touch or find me on social media.</p>
+      </a>
+    </nav>
+
+    <footer>
+      <p class="muted">© 2025 Devesh P. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
+</html> -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Devesh | Portfolio</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devesh's Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .typing-animation {
+            border-right: 2px solid #3b82f6;
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { border-color: #3b82f6; }
+            51%, 100% { border-color: transparent; }
+        }
+        
+        .skill-bar {
+            height: 8px;
+            background: linear-gradient(90deg, #1e40af, #3b82f6);
+            border-radius: 4px;
+            animation: fillBar 2s ease-out;
+        }
+        
+        @keyframes fillBar {
+            from { width: 0; }
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            background: #3b82f6;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #e5e7eb;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 1.5rem;
+            width: 2px;
+            height: calc(100% - 1rem);
+            background: #e5e7eb;
+        }
+        
+        .timeline-item:last-child::after {
+            display: none;
+        }
+    </style>
+
+    <!-- Google tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-E424GB1XSY"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-E424GB1XSY');
+      </script>
+
+
 </head>
-<body class="bg-gray-50 text-gray-900">
-  <!-- Navbar -->
-  <nav class="bg-white shadow-md p-4 fixed w-full top-0">
-    <div class="container mx-auto flex justify-between">
-      <h1 class="font-bold text-xl">Devesh</h1>
-      <div class="space-x-4">
-        <a href="#about" class="hover:text-blue-600">About</a>
-        <a href="#projects" class="hover:text-blue-600">Projects</a>
-        <a href="#resume" class="hover:text-blue-600">Resume</a>
-        <a href="#contact" class="hover:text-blue-600">Contact</a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- About Section -->
-  <section id="about" class="min-h-screen flex items-center justify-center">
-    <div class="max-w-2xl text-center">
-      <h2 class="text-3xl font-bold mb-4">Hi, I'm Devesh 👋</h2>
-      <p class="text-lg">I’m a student passionate about Data Science, Machine Learning, and Robotics. This is my portfolio showcasing my projects and experience.</p>
-    </div>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects" class="py-16 bg-gray-100">
-    <div class="container mx-auto">
-      <h2 class="text-3xl font-bold text-center mb-8">Projects</h2>
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-white p-6 shadow rounded-lg">
-          <h3 class="font-semibold text-xl mb-2">Market Volatility Prediction</h3>
-          <p>Built using ARIMA, LSTM, Transformer & GARCH models. Predicting financial volatility using ML.</p>
-          <a href="https://github.com/username/project-repo" class="text-blue-500 mt-2 inline-block">View on GitHub →</a>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm fixed w-full top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-xl font-bold text-gray-800">My Portfolio</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-600 hover:text-blue-600 transition-colors">Home</a>
+                    <a href="#about" class="text-gray-600 hover:text-blue-600 transition-colors">About</a>
+                    <a href="#education" class="text-gray-600 hover:text-blue-600 transition-colors">Education</a>
+                    <a href="#experience" class="text-gray-600 hover:text-blue-600 transition-colors">Experience</a>
+                    <a href="#skills" class="text-gray-600 hover:text-blue-600 transition-colors">Skills</a>
+                    <a href="#projects" class="text-gray-600 hover:text-blue-600 transition-colors">Projects</a>
+                    <a href="#contact" class="text-gray-600 hover:text-blue-600 transition-colors">Contact</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-gray-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
         </div>
-        <div class="bg-white p-6 shadow rounded-lg">
-          <h3 class="font-semibold text-xl mb-2">AI for Agriculture</h3>
-          <p>Built an AI-powered assistant for irrigation, crop recommendation, and price forecasts.</p>
-          <a href="https://github.com/username/project-repo" class="text-blue-500 mt-2 inline-block">View on GitHub →</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg min-h-screen flex items-center pt-16">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+            <div class="mb-8">
+                
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">Hi, I'm Devesh Pawar</h1>
+                <div class="text-xl md:text-2xl mb-6">
+                    <span>Student passionate about </span>
+                    <span id="typing-text" class="typing-animation font-semibold">Artificial Intelligence</span>
+                </div>
+                <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto opacity-90">
+                    Exploring the fascinating world of <b> Machine Learning, Data Analytics, Deep Learing</b> and <b>Robotics</b>. 
+                </p>
+                <p class="text-lg md:text-xl mb-7 max-w-2xl mx-auto opacity-90">
+                    Building the future!! One algorithm at a time :)
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="scrollToSection('projects')" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                        View My Work
+                    </button>
+                    <a href="./resume/devesh_resume.pdf" download="devesh_resume.pdf"
+   class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+   Download Resume
+</a>
+
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Resume Section -->
-  <section id="resume" class="py-16">
-    <div class="text-center">
-      <h2 class="text-3xl font-bold mb-4">Resume</h2>
-      <a href="resume.pdf" download class="bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700">Download Resume</a>
-    </div>
-  </section>
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">About Me</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    I'm a 4th year student IIT Madras, filled with passion for technology and innovation, 
+                    constantly learning and exploring new frontiers in Data Science & AI.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <center>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-6">My Journey</h3>
+                    </center>
+                    <p class="text-gray-600 mb-4">
+                        Currently pursuing my studies while diving deep into the world of data science and artificial intelligence. Want to gain as much actual work experience as I can while I study, so I can hit the ground running when I graduate.  
+                        I believe in the power of technology to solve real-world problems and create positive impact.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        My interests span across machine learning algorithms, deep learning, data visualization, robotics engineering, 
+                        and the ethical implications of AI in society.
+                    </p>
+                    
 
-  <!-- Contact Section -->
-  <section id="contact" class="py-16 bg-gray-100">
-    <div class="text-center">
-      <h2 class="text-3xl font-bold mb-4">Contact</h2>
-      <p>📧 devesh@example.com</p>
-      <p>🔗 <a href="https://linkedin.com/in/your-linkedin" class="text-blue-600">LinkedIn</a></p>
-      <p>💻 <a href="https://github.com/username" class="text-blue-600">GitHub</a></p>
-    </div>
-  </section>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-2xl">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-6">Focus Areas</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                                <span class="text-blue-600">🤖</span>
+                            </div>
+                            <span class="text-gray-700">Machine Learning & AI</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 bg-slate-100 rounded-full flex items-center justify-center">
+                                <span class="text-slate-600">📊</span>
+                            </div>
+                            <span class="text-gray-700">Data Science & Analytics</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 bg-emerald-100 rounded-full flex items-center justify-center">
+                                <span class="text-emerald-600">🔧</span>
+                            </div>
+                            <span class="text-gray-700">Robotics Engineering</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 bg-amber-100 rounded-full flex items-center justify-center">
+                                <span class="text-amber-600">💡</span>
+                            </div>
+                            <span class="text-gray-700">Innovation & Research</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <footer class="bg-gray-800 text-white text-center p-4">
-    © 2025 Devesh. All rights reserved.
-  </footer>
-</body>
+    <!-- Education Section -->
+    <section id="education" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Education</h2>
+                <p class="text-lg text-gray-600">My Academic Journey and Achievements</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Academic Timeline -->
+                <div>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-8">Academic Background</h3>
+                    <div class="space-y-8">
+                        <div class="timeline-item">
+                            <div class="bg-white p-6 rounded-lg shadow-sm">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h4 class="text-lg font-semibold text-gray-800">B.Tech in Mechanical Engineering & Interdisciplinary M.Tech in Data Science</h4>
+                                    <span class="text-sm text-gray-500 bg-blue-100 px-2 py-1 rounded">2022-2027</span>
+                                </div>
+                                <p class="text-blue-600 font-medium mb-2">Indian Institute of Technology Madras</p>
+                                <p class="text-gray-600 mb-3">Specialization in Artificial Intelligence and Machine Learning</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">CGPA: 9.15</span>
+                                    <!-- <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Dean's List</span> -->
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="bg-white p-6 rounded-lg shadow-sm">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h4 class="text-lg font-semibold text-gray-800">Higher Secondary Education</h4>
+                                    <span class="text-sm text-gray-500 bg-blue-100 px-2 py-1 rounded">2019-2021</span>
+                                </div>
+                                <p class="text-blue-600 font-medium mb-2">R. C. Patel Arts, Commerce and Science College, Shirpur</p>
+                                <p class="text-gray-600 mb-3">Advanced Placement in Mathematics </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Class XII: 98.17%</span>
+                                    <!-- <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded"></span> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Certifications & Courses -->
+                <div>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-8">Certifications & Courses</h3>
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-blue-500">
+                            <h4 class="font-semibold text-gray-800">Data Structures and Algorithms</h4>
+                            <p class="text-sm text-gray-600">Udemy Courses</p>
+                            <p class="text-xs text-gray-500 mt-1">Completed: 2024</p>
+                        </div>
+                        
+                        <!-- <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-emerald-500">
+                            <h4 class="font-semibold text-gray-800">Deep Learning Specialization</h4>
+                            <p class="text-sm text-gray-600">DeepLearning.AI - Coursera</p>
+                            <p class="text-xs text-gray-500 mt-1">Completed: 2023</p>
+                        </div> -->
+                        
+                        <!-- <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-purple-500">
+                            <h4 class="font-semibold text-gray-800">Data Science Professional Certificate</h4>
+                            <p class="text-sm text-gray-600">IBM - Coursera</p>
+                            <p class="text-xs text-gray-500 mt-1">Completed: 2023</p>
+                        </div> -->
+                        
+                        <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-orange-500">
+                            <h4 class="font-semibold text-gray-800">ROS for Beginners</h4>
+                            <p class="text-sm text-gray-600">Robot Operating System</p>
+                            <p class="text-xs text-gray-500 mt-1">Completed: 2023</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Academic Achievements -->
+                    <div class="mt-8">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-8">Academic Achievements</h3>
+                            <div class="space-y-4">
+                            <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-emerald-500">
+                            <h4 class="font-semibold text-gray-800">Silver Medalist Inter-IIT Tech Meet'23</h4>
+                            <!-- <p class="text-sm text-gray-600">Robot Operating System</p>
+                            <p class="text-xs text-gray-500 mt-1">Completed: 2023</p> -->
+                        </div>
+                            <!-- <div class="grid grid-cols-2 gap-4"> -->
+                            <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-purple-500">
+                            <h4 class="font-semibold text-gray-800">AIR 4403 in JEE Advanced 2022</h4>
+                            <!-- <p class="text-sm text-gray-600">Robot Operating System</p>
+                            <p class="text-xs text-gray-500 mt-1">Completed: 2023</p> -->
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-red-500">
+                            <h4 class="font-semibold text-gray-800">Rank 168 in MHT-CET 2022</h4>
+                            <!-- <p class="text-sm text-gray-600">Robot Operating System</p>
+                            <p class="text-xs text-gray-500 mt-1">Completed: 2023</p> -->
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Experience</h2>
+                <p class="text-lg text-gray-600">Professional Roles and Internships I have undertaken</p>
+            </div>
+
+            <div class="space-y-8">
+                <!-- Experience Item 1 -->
+                <div class="timeline-item">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-lg font-semibold text-gray-800">Intern</h4>
+                            <span class="text-sm text-gray-500 bg-blue-100 px-2 py-1 rounded">May 2025 - July 2025</span>
+                        </div>
+                        <p class="text-blue-600 font-medium mb-2">Wipro Infrastructure Engineering</p>
+                        <p class="text-gray-600 mb-3">
+                            Worked on packaging cost optimization of Spares, using Unsupervised Machine Learing Techniques. Built a ML pipeline to automate the process of data cleaning, feature engineering, model training and deployment, by building a Python Flask Web Application.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Python</span>
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Excel</span>
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Unsupervised Learing</span>
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Data Analytics</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience Item 2 -->
+                <div class="timeline-item">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-lg font-semibold text-gray-800">Research Intern</h4>
+                            <span class="text-sm text-gray-500 bg-blue-100 px-2 py-1 rounded">May 2024 - July 2024</span>
+                        </div>
+                        <p class="text-blue-600 font-medium mb-2">FedEx-IITM Center</p>
+                        <p class="text-gray-600 mb-3">
+                            Worked on Project: "AI-based driver monitoring - Data Acquisition & Performance Studies" under<i> Prof. Babji Srinivasan (Dept. of Applied Mechanics, IIT Madras)</i>. Did Extensive Literature Review, In Depth Analysis of Existing Research. Assessed Multiple Haptic Devices and Sensors for the project.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Research</span>
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Presentation</span>
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Sensors and Electronics</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-lg font-semibold text-gray-800">Head of iBot Club (Robotics Club @CFI IIT Madras)</h4>
+                            <span class="text-sm text-gray-500 bg-blue-100 px-2 py-1 rounded">April 2023 - March 2025 </span>
+                        </div>
+                        <p class="text-blue-600 font-medium mb-2">Center For Innovation, IIT Madras</p>
+                        <p class="text-gray-600 mb-3">
+                            Led 60+ member robotics club, organized workshops and events to promote robotics culture on campus. Mentored juniors on 5+ robotics projects and competitions. Coordinated with industry experts for collaborations.
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Leadership</span>
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Team Management</span>
+                            <!-- <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Autonomous Navigation</span> -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience Item 3 -->
+                <div class="timeline-item">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-lg font-semibold text-gray-800">Software and Electronics Intern</h4>
+                            <span class="text-sm text-gray-500 bg-blue-100 px-2 py-1 rounded">May 2023 - Nov 2023</span>
+                        </div>
+                        <p class="text-blue-600 font-medium mb-2">Krishaka (Agritech Startup)</p>
+                        <p class="text-gray-600 mb-3">
+                            Developed initial version of ROS-based simulation of autonomous farm vehicle for precision farming. Worked on hardware integration of sensors and actuators with microcontroller. Worked on path planning algorithms for autonomous navigation in farm fields.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">ROS</span>
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Gazebo</span>
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Autonomous Navigation</span>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Skills & Technologies</h2>
+                <p class="text-lg text-gray-600">Tools and technologies I work with</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Programming Languages -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Programming</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm text-gray-600">Python</span>
+                                <span class="text-sm text-gray-600">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar w-[90%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm text-gray-600">C++</span>
+                                <span class="text-sm text-gray-600">80%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar w-[80%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm text-gray-600">SQL</span>
+                                <span class="text-sm text-gray-600">75%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar w-[75%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm text-gray-600">Bash</span>
+                                <span class="text-sm text-gray-600">60%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar w-[60%]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ML/AI Tools -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">ML/AI Tools</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm text-gray-600">TensorFlow</span>
+                                <span class="text-sm text-gray-600">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar w-[85%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm text-gray-600">Scikit-learn</span>
+                                <span class="text-sm text-gray-600">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar w-[90%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm text-gray-600">PyTorch</span>
+                                <span class="text-sm text-gray-600">70%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar w-[70%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm text-gray-600">LangChain</span>
+                                <span class="text-sm text-gray-600">20%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar w-[20%]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Data & Robotics -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Data & Robotics</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm text-gray-600">Pandas/NumPy</span>
+                                <span class="text-sm text-gray-600">95%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar w-[95%]"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm text-gray-600">Linux/Bash</span>
+                                <span class="text-sm text-gray-600">80%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar w-[80%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm text-gray-600">ROS</span>
+                                <span class="text-sm text-gray-600">80%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar w-[80%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm text-gray-600">Arduino/Raspberry Pi</span>
+                                <span class="text-sm text-gray-600">60%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar w-[60%]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Projects</h2>
+                <p class="text-lg text-gray-600">Some of my recent work and experiments</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center">
+                        <img src="images/voltility.png" alt="Volatility Project" class="object-cover w-full h-full">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Volatility Prediction using LSTM, Transformer, and Hybrid Models</h3>
+                        <p class="text-gray-600 mb-4">This project explores different deep learning models for predicting stock market volatility. It utilizes Variational Mode Decomposition (VMD) to decompose the volatility signal into intrinsic mode functions (IMFs) and then uses LSTM, Transformer, and a Hybrid LSTM-TCN-Attention model to make predictions on these modes.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-600 text-sm rounded-full">Python</span>
+                            <span class="px-3 py-1 bg-slate-100 text-slate-600 text-sm rounded-full">Deep Learning</span>
+                            <!-- <span class="px-3 py-1 bg-emerald-100 text-emerald-600 text-sm rounded-full">Streamlit</span> -->
+                        </div>
+                        <a href="https://github.com/Devesh176/market_volatility_pred"
+   class="inline-block px-5 py-2.5 bg-gradient-to-r from-blue-600 to-blue-300 text-white font-semibold rounded-lg shadow-md hover:from-blue-700 hover:to-blue-600 hover:shadow-lg transition-all duration-300 ease-in-out">
+   View Project →
+</a>
+
+
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-br from-emerald-500 to-emerald-700 flex items-center justify-center">
+                        <img src="images/GPT_architecture.png" alt="Volatility Project" class="object-cover w-full h-full">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Custom GPT Implementation</h3>
+                        <p class="text-gray-600 mb-4">This project focuses on building and fine-tuning a custom GPT model for question answering within the agricultural domain. The model is trained on a dataset of agricultural questions and answers.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-orange-100 text-orange-600 text-sm rounded-full">Python</span>
+                            <span class="px-3 py-1 bg-red-100 text-red-600 text-sm rounded-full">LLM</span>
+                            <!-- <span class="px-3 py-1 bg-blue-100 text-blue-600 text-sm rounded-full">Python</span> -->
+                        </div>
+                        <a href="https://github.com/Devesh176/my_custom_GPT"
+   class="inline-block px-5 py-2.5 bg-gradient-to-r from-orange-600 to-orange-300 text-white font-semibold rounded-lg shadow-md hover:from-blue-700 hover:to-blue-600 hover:shadow-lg transition-all duration-300 ease-in-out">
+   View Project →
+</a>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="relative h-48 overflow-hidden">
+                        <div id="carousel-track" class="flex w-full h-full transition-transform duration-700 ease-in-out">
+                        <img src="./images/cobalt2.jpg" alt="Project CoBALT"
+                            class="object-cover w-full h-full flex-shrink-0">
+                        <img src="./images/cobalt1.jpg" alt="Project CoBALT"
+                            class="object-cover w-full h-full flex-shrink-0">
+                        </div>
+                    </div>
+
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Project CoBALT</h3>
+                        <p class="text-gray-600 mb-4">
+                        Project CoBALT (Collaborative Bots for Automated Logistics and Transport) aims to revolutionize warehouse operations by developing a cutting-edge automation system employing mobile robots equipped with mecanum wheels. Leveraging swarm technology for collaborative task execution and autonomous navigation, the system will optimize inventory management, streamline order fulfillment processes, and enhance overall warehouse efficiency.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-yellow-100 text-yellow-600 text-sm rounded-full">Navigation</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-600 text-sm rounded-full">Control</span>
+                        <span class="px-3 py-1 bg-emerald-100 text-emerald-600 text-sm rounded-full">ROS</span>
+                        </div>
+                        <a href="https://github.com/Devesh176/Project-CoBALT/"
+   class="inline-block px-5 py-2.5 bg-gradient-to-r from-purple-600 to-purple-300 text-white font-semibold rounded-lg shadow-md hover:from-blue-700 hover:to-blue-600 hover:shadow-lg transition-all duration-300 ease-in-out">
+   View Project →
+</a>
+                    </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-br from-emerald-500 to-emerald-700 flex items-center justify-center">
+                        <img src="images/SnakegameRL.png" alt="Volatility Project" class="object-cover w-full h-full">
+                    </div>
+
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Reinforcement Learning Based Snake Game Playing Agent</h3>
+                        <p class="text-gray-600 mb-4">
+                        Snake Game AI with Deep Q-Learning and Obstacle Avoidance. The project includes visualization of training progress and uses function approximation (a neural network) to estimate Q-values.
+                        <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-red-100 text-red-600 text-sm rounded-full">Reinforcement Learning</span>
+                        <span class="px-3 py-1 bg-indigo-100 text-indigo-600 text-sm rounded-full">Q Learning</span>
+                        <span class="px-3 py-1 bg-pink-100 text-pink-600 text-sm rounded-full">Pygame</span>
+                        </div>
+                        <a href="https://github.com/Devesh176/Snake_Game_RL/"
+   class="inline-block px-5 py-2.5 bg-gradient-to-r from-green-600 to-green-300 text-white font-semibold rounded-lg shadow-md hover:from-blue-700 hover:to-blue-600 hover:shadow-lg transition-all duration-300 ease-in-out">
+   View Project →
+</a>
+                    </div>
+                    </div>
+
+                    
+
+
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Let's Connect</h2>
+                <p class="text-lg text-gray-600">Interested in collaborating or just want to chat about AI and robotics?</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-6">Get in Touch</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                                <svg class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M20,4H4C2.9,4 2,4.9 2,6V18C2,19.1 2.9,20 4,20H20C21.1,20 22,19.1 22,18V6C22,4.9 21.1,4 20,4ZM20,8L12,13L4,8V6L12,11L20,6V8Z"/>
+                                </svg>
+                            </div>
+                            <span class="text-gray-700"><a href='mailto:deveshppawar484@gmail.com'>Email</a></span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center">
+                                <svg class="w-5 h-5 text-slate-600" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M19,3A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3H19M18.5,18.5V13.2A3.26,3.26 0 0,0 15.24,9.94C14.39,9.94 13.4,10.46 12.92,11.24V10.13H10.13V18.5H12.92V13.57C12.92,12.8 13.54,12.17 14.31,12.17A1.4,1.4 0 0,1 15.71,13.57V18.5H18.5M6.88,8.56A1.68,1.68 0 0,0 8.56,6.88C8.56,5.95 7.81,5.19 6.88,5.19A1.69,1.69 0 0,0 5.19,6.88C5.19,7.81 5.95,8.56 6.88,8.56M8.27,18.5V10.13H5.5V18.5H8.27Z"/>
+                                </svg>
+                            </div>
+                            <span class="text-gray-700"><a href = 'https://in.linkedin.com/in/devesh-pawar-36b2bb25a'>LinkedIn</a></span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center">
+                                <svg class="w-5 h-5 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z"/>
+                                </svg>
+                            </div>
+                            <span class="text-gray-700"><a href='https://github.com/Devesh176'>GitHub</a></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-xl">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-6">Send a Message</h3>
+                    <form action="https://formspree.io/f/xgvlpabl" method="POST" class="space-y-4">
+                        <input type="text" name="name" placeholder="Your Name" required
+                              class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        
+                        <input type="email" name="email" placeholder="Your Email" required
+                              class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        
+                        <textarea name="message" placeholder="Your Message" rows="4" required
+                                  class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                        
+                        <button type="submit"
+                                class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-colors">
+                          Send
+                        </button>
+                      </form>
+
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2025 Devesh's Portfolio. Built with passion for AI and innovation.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Typing animation
+        const texts = ['Data Science', 'Machine Learning', 'Artificial Intelligence', 'Robotics'];
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingElement = document.getElementById('typing-text');
+
+        function typeText() {
+            const currentText = texts[textIndex];
+            
+            if (isDeleting) {
+                typingElement.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingElement.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            if (!isDeleting && charIndex === currentText.length) {
+                setTimeout(() => isDeleting = true, 2000);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                textIndex = (textIndex + 1) % texts.length;
+            }
+
+            const speed = isDeleting ? 50 : 100;
+            setTimeout(typeText, speed);
+        }
+
+        typeText();
+
+
+        // Smooth scrolling
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Navigation links
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        mobileMenuBtn.addEventListener('click', function() {
+            alert('Mobile menu would open here!');
+        });
+
+        document.querySelector('form').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const form = e.target;
+        const formData = new FormData(form);
+
+        try {
+            const response = await fetch(form.action, {
+                method: form.method,
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            });
+
+            if (response.ok) {
+                alert('Message sent successfully!');
+                form.reset();
+            } else {
+                alert('Oops! Something went wrong. Please try again.');
+            }
+        } catch (error) {
+            alert('Network error. Please try again later.');
+        }
+    });
+
+
+        // Scroll animations for skill bars
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const skillBars = entry.target.querySelectorAll('.skill-bar');
+                    skillBars.forEach(bar => {
+                        bar.style.animation = 'none';
+                        bar.offsetHeight; // Trigger reflow
+                        bar.style.animation = 'fillBar 2s ease-out';
+                    });
+                }
+            });
+        }, observerOptions);
+
+        observer.observe(document.getElementById('skills'));
+    </script>
+    
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'979b773e542484e9',t:'MTc1Njk2NzcxNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+
+<script>
+    const track = document.getElementById("carousel-track");
+    const totalImages = track.children.length;
+    let currentIndex = 0;
+
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % totalImages;
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }, 3000); // change every 4s
+    </script>
 </html>
